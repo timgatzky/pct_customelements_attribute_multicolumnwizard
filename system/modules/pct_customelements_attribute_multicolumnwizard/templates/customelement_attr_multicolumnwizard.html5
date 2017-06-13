@@ -1,0 +1,18 @@
+
+<?php if($this->value): ?>
+<div <?php echo $this->cssID; ?> <?php if($this->class): ?>class="<?php echo $this->class; ?>"<?php endif; ?>>
+<ul>
+<?php foreach($this->rows as $row): ?>
+	<li class="<?= $row['class']; ?>">
+		<ul class="fields">	
+		<?php foreach($row['fields'] as $field => $value): ?>
+		<li class="<?= $field; ?>">
+			<span class="name"><?= $field; ?></span><span class="value"><?= $value; ?></span>
+		</li>
+		<?php endforeach; ?>
+		</ul>
+	</li>
+<?php endforeach; ?>
+</ul>
+</div>
+<?php endif; ?>
